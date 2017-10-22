@@ -60,3 +60,6 @@ typings/
 # lock file
 package-lock.json
 yarn.lock
+
+# generated directory
+dist
