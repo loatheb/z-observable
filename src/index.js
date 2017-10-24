@@ -1,10 +1,18 @@
+import { isConstructor } from './utils'
+
 class Observable {
   /**
    * support the `from` method at the constructor
    * https://tc39.github.io/proposal-observable/#observable-from
+   *
+   * Let C be the this value.
+   * If IsConstructor(C) is false, let C be %Observable%.
+   * Let subscriber be a new built-in function object as defined in Observable.of Subscriber Functions.
+   * Set subscriber's [[Items]] internal slot to items.
+   * Return Construct(C, « ‍subscriber »).
    */
   static from() {
-
+    const C = isConstructor(this) ? this : Observable
   }
 
   /**
@@ -16,7 +24,7 @@ class Observable {
   }
 
   constructor() {
-    super()
+
   }
 
   /**
