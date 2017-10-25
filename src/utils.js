@@ -1,3 +1,5 @@
+import assert from 'assert'
+
 /**
  * https://tc39.github.io/ecma262/#sec-isconstructor
  *
@@ -26,4 +28,22 @@ export function isConstructor(argument) {
    * Finally return false.
    */
   return false
+}
+
+/**
+ * https://tc39.github.io/ecma262/#sec-ispropertykey
+ * The abstract operation IsPropertyKey determines if argument, which must be an ECMAScript language value, is a value that may be used as a property key.
+ */
+export function isPropertyKey(argument) {
+  if (typeof argument === 'string') {
+    return true
+  }
+  if (typeof argument === 'symbol') {
+    return true
+  }
+  return false
+}
+
+export function getMethod(obj, key) {
+  assert(isPropertyKey(key), true)
 }
