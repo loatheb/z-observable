@@ -1,4 +1,5 @@
 # z-observable
+> A conformable, ES6-based syntax for observable objects.
 
 ## How to contribute
 
